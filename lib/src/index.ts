@@ -1,12 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-export * from './src/service/lightbox.service';
-export * from './src/component/lightbox.component';
-export * from './src/model/image.model';
+export * from './service/lightbox.service';
+export * from './component/lightbox.component';
+export * from './model/image.model';
 
-import { Lightbox } from './src/component/lightbox.component';
-import { LightboxService } from './src/service/lightbox.service';
+import { Lightbox } from './component/lightbox.component';
+import { LightboxService } from './service/lightbox.service';
 
 // import 'photoswipe/dist/photoswipe.css';
 // import 'photoswipe/dist/default-skin/default-skin.css';
@@ -19,10 +19,10 @@ export let providers = [LightboxService];
   providers: [LightboxService],
   exports: [Lightbox],
 })
-export class Angular2PhotoswipeModule {
+export class NgxPhotoswipeModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: Angular2PhotoswipeModule,
+      ngModule: NgxPhotoswipeModule,
       providers: providers,
     };
   }

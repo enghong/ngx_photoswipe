@@ -16,15 +16,15 @@ Add to index.html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
 ```
-Include the Angular2PhotoswipeModule.
+Include the NgxPhotoswipeModule.
 ```js
-import {Angular2PhotoswipeModule} from 'angular2_photoswipe';
+import {NgxPhotoswipeModule} from 'angular2_photoswipe';
 
 @NgModule({
   ...
   imports: [
     BrowserModule,
-    Angular2PhotoswipeModule.forRoot()
+    NgxPhotoswipeModule.forRoot()
   ]
   ...
 })

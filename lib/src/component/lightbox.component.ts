@@ -19,7 +19,7 @@ import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'lightbox',
-  template: `<div class="angular2_photoswipe" [id]="key" itemscope itemtype="http://schema.org/ImageGallery">
+  template: `<div class="ngx_photoswipe" [id]="key" itemscope itemtype="http://schema.org/ImageGallery">
       <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" *ngFor="let image of getImages()">
           <a href="{{image.largeUrl}}" itemprop="contentUrl" [attr.data-size]="image.width + 'x' + image.height" (click)="openImage(image)">
               <img src="{{image.thumbUrl}}" itemprop="thumbnail" alt="{{image.description}}" />
@@ -106,7 +106,7 @@ export class Lightbox implements OnChanges {
   public openImage(img: Image) {
     this.openPhotoSwipe(
       img,
-      document.getElementsByClassName('angular2_photoswipe')[0]
+      document.getElementsByClassName('ngx_photoswipe')[0]
     );
     return false;
   }
@@ -135,7 +135,7 @@ export class Lightbox implements OnChanges {
     const items: PhotoswipeImage[] = [];
     items.length = 0;
 
-    this.lbService.getImages(this.key).forEach(function(img) {
+    this.lbService.getImages(this.key).forEach(function (img) {
       items.push(new PhotoswipeImage(img.largeUrl, img.width, img.height));
     });
     return items;
