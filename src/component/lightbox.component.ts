@@ -1,16 +1,21 @@
 import {
-    AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, DoCheck, EventEmitter, Input,
-    OnChanges, OnInit,
-    Output,
-    ViewEncapsulation
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  ViewEncapsulation
 } from '@angular/core';
-import {Image} from '../model/image.model';
-import {LightboxService} from '../service/lightbox.service';
-import {PhotoswipeImage} from "../model/photoswipe-image.model";
+import { Image } from '../model/image.model';
+import { LightboxService } from '../service/lightbox.service';
+import { PhotoswipeImage } from '../model/photoswipe-image.model';
+import { PLATFORM_ID, Inject } from '@angular/core';
 
 import * as PhotoSwipe from 'photoswipe';
-import * as PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
+import * as PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 const imagesLoaded = require('imagesloaded');
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'lightbox',
@@ -72,52 +77,67 @@ const imagesLoaded = require('imagesloaded');
   encapsulation: ViewEncapsulation.None
 })
 export class Lightbox implements OnChanges {
-
-  @Input('galleryKey') key:string;
-  @Output('imagesLoaded') loadedEmitter:EventEmitter<number> = new EventEmitter();
-
-  constructor(private lbService:LightboxService, private ref: ChangeDetectorRef) {
+  @Input('galleryKey') key: string;
+  @Output('imagesLoaded')
+  loadedEmitter: EventEmitter<number> = new EventEmitter();
+  isBrowser: boolean;
+  constructor(
+    private lbService: LightboxService,
+    private ref: ChangeDetectorRef,
+    @Inject(PLATFORM_ID) platformId: string
+  ) {
     ref.detach();
+    this.isBrowser = this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnChanges() {
     this.ref.detectChanges();
-    this.checkImageLoad();
+    if (this.isBrowser) {
+      this.checkImageLoad();
+    }
   }
 
   private checkImageLoad() {
-    imagesLoaded( `#${this.key}`, (check:any) => {
+    imagesLoaded(`#${this.key}`, (check: any) => {
       this.loadedEmitter.emit(check.images.length);
     });
   }
 
   public openImage(img: Image) {
-    this.openPhotoSwipe(img, document.getElementsByClassName('angular2_photoswipe')[0]);
+    this.openPhotoSwipe(
+      img,
+      document.getElementsByClassName('angular2_photoswipe')[0]
+    );
     return false;
   }
 
-  public getImages():Image[] {
+  public getImages(): Image[] {
     return this.lbService.getImages(this.key);
   }
 
-  private openPhotoSwipe(img:Image, galleryDOM:any):boolean {
-
-    let options:PhotoSwipe.Options = {};
+  private openPhotoSwipe(img: Image, galleryDOM: any): boolean {
+    const options: PhotoSwipe.Options = {};
     options.galleryUID = galleryDOM.getAttribute('data-pswp-uid');
     options.index = img.id;
-    const PSWP:HTMLElement = <HTMLElement> document.querySelectorAll('.pswp')[0];
-    new PhotoSwipe(PSWP, PhotoSwipeUI_Default, this.getImagesAsPhotoswipe(), options).init();
+    const PSWP: HTMLElement = <HTMLElement>document.querySelectorAll(
+      '.pswp'
+    )[0];
+    new PhotoSwipe(
+      PSWP,
+      PhotoSwipeUI_Default,
+      this.getImagesAsPhotoswipe(),
+      options
+    ).init();
     return false;
   }
 
-  private getImagesAsPhotoswipe():PhotoswipeImage[] {
-    let items:PhotoswipeImage[] = [];
+  private getImagesAsPhotoswipe(): PhotoswipeImage[] {
+    const items: PhotoswipeImage[] = [];
     items.length = 0;
 
-    this.lbService.getImages(this.key).forEach(function(img){
+    this.lbService.getImages(this.key).forEach(function(img) {
       items.push(new PhotoswipeImage(img.largeUrl, img.width, img.height));
     });
     return items;
   }
-
 }

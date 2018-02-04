@@ -1,5 +1,4 @@
 export class Image {
-
   id: number;
   largeUrl: string;
   thumbUrl: string;
@@ -11,5 +10,4 @@ export class Image {
   author: string;
 
   constructor() {}
-
 }

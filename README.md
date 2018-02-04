@@ -1,13 +1,20 @@
-# PhotoSwipe for Angular 2+
+# PhotoSwipe for Angular 2+ with Universal support
 
 This is a library with components and services for PhotoSwipe.
 The official PhotoSwipe JS file is still needed.
 
-### installation
+### Installation
 
 ```
 npm install --save photoswipe
 npm install --save angular2_photoswipe
+```
+Add to index.html
+```
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
 ```
 Include the Angular2PhotoswipeModule.
 ```js
@@ -26,7 +33,7 @@ export class AppModule {
 }
 ```
 
-### usage
+### Usage
 
 ```js
 //create gallery
@@ -45,8 +52,13 @@ img.thumbUrl = '/assets/one.jpg';
 this.ls.addImage('galleryKey', img);
 ```
 
-### demo
+### Demo
 
 For a complete integration example have a look in the demo folder.
 
+
+### Origin repo:
+```
+  https://github.com/wollio/angular2_photoswipe
+```
 

@@ -1,64 +1,67 @@
 {
-  "name": "angular2_photoswipe",
+  "name": "ngx-photoswipe",
   "version": "0.0.11",
-  "description": "An angular2 component for photoswipe",
+  "description": "An Angular2+ component for photoswipe with Universal support.",
   "scripts": {
     "build": "webpack --config config/webpack.config.js",
     "start": "webpack-dev-server --config config/webpack.dev.config.js --inline --progress --port 3000 --content-base src/demo",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --single-quote --parser typescript --write \"./src/**/*.ts\" && prettier --single-quote --parser scss --write \"./src/**/*.scss\""
+
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wollio/angular2_photoswipe.git"
+    "url": "git+https://github.com/ahaw/ngx_photoswipe.git"
   },
   "keywords": [
     "angular2",
     "PhotoSwipe",
     "Lightbox"
   ],
-  "author": "David Wollschlegel",
+  "author": "Arkadiusz Hnat",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wollio/angular2_photoswipe/issues"
+    "url": "https://github.com/ahaw/ngx_photoswipe/issues"
   },
-  "homepage": "https://github.com/wollio/angular2_photoswipe#readme",
+  "homepage": "https://github.com/ahaw/ngx_photoswipe#readme",
   "peerDependencies": {
-    "@angular/core": "^2.4.4 || ^4.0.0",
+    "@angular/core": "^5.2.3",
     "photoswipe": "4.1.2"
   },
   "main": "bundles/index.umd.js",
   "module": "index.js",
   "typings": "index.d.ts",
   "devDependencies": {
-    "@angular/common": "^2.4.4 || ^4.0.0",
-    "@angular/compiler": "^2.4.4 || ^4.0.0",
-    "@angular/compiler-cli": "^2.4.4 || ^4.0.0",
-    "@angular/core": "^2.4.4 || ^4.0.0",
-    "@angular/platform-browser": "^2.4.4 || ^4.0.0",
-    "@angular/platform-browser-dynamic": "^2.4.4 || ^4.0.0",
-    "@types/node": "^8.0.19",
+    "@angular/common": "^5.2.3",
+    "@angular/compiler": "^5.2.3",
+    "@angular/compiler-cli": "^5.2.3",
+    "@angular/core": "^5.2.3",
+    "@angular/platform-browser": "^5.2.3",
+    "@angular/platform-browser-dynamic": "^5.2.3",
+    "@types/node": "^9.4.0",
     "@types/photoswipe": "^4.0.28",
     "angular2-router-loader": "^0.3.5",
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^3.2.2",
-    "codelyzer": "^3.1.2",
+    "codelyzer": "^4.1.0",
     "copy-webpack-plugin": "^4.0.1",
     "core-js": "^2.5.1",
-    "css-loader": "^0.26.4",
-    "file-loader": "^0.11.2",
+    "css-loader": "^0.28.9",
+    "file-loader": "^1.1.6",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
     "ie-shim": "^0.1.0",
     "photoswipe": "4.1.2",
+    "prettier": "1.10.2",
     "raw-loader": "^0.5.1",
     "reflect-metadata": "^0.1.9",
     "rxjs": "^5.4.0",
-    "style-loader": "^0.18.2",
+    "style-loader": "^0.20.1",
     "to-string-loader": "^1.1.5",
     "tslint": "^5.6.0",
     "tslint-loader": "^3.5.3",
     "typescript": "^2.3.4",
-    "webpack": "^2.6.1",
+    "webpack": "^3.10.0",
     "webpack-dev-server": "^2.4.2",
     "webpack-merge": "^4.1.0",
     "zone.js": "^0.8.12"
