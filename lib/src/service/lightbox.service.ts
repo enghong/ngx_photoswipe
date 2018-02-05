@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Image } from '../model/image.model';
+import { Injectable } from "@angular/core";
+import { Image } from "../model/image.model";
 
 @Injectable()
 export class LightboxService {
-  gallery: { [key: string]: Image[] } = {};
+  public gallery: { [key: string]: Image[] } = {};
 
   constructor() {}
 

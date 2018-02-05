@@ -1,0 +1,24 @@
+{
+  "name": "ngx-photoswipe",
+  "version": "0.0.15",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahaw/ngx_photoswipe.git"
+  },
+  "author": "Arkadiusz Hnat",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "@angular/core": "^5.0.0",
+    "@angular/common": "^5.0.0"
+  },
+  "ngPackage": {
+    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+
+    "workingDirectory": "../.ng_build",
+    "lib": {
+      "entryFile": "src/public_api.ts"
+    },
+    "dest": "../dist/ngx-photoswipe"
+  }
+}

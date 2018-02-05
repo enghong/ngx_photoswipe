@@ -1,7 +1,7 @@
 export class PhotoswipeImage {
-  src: string;
-  w: number;
-  h: number;
+  public src: string;
+  public w: number;
+  public h: number;
 
   constructor(src: string, w: number, h: number) {
     this.src = src;
