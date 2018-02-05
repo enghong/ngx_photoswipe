@@ -11,11 +11,11 @@
       "photoswipe",
       "node"
     ],
-    "lib": ["es2015", "dom"]
+    "lib": [
+      "es2015",
+      "dom"
+    ]
   },
-  "files": [
-    "index.ts"
-  ],
   "exclude": [
     "node_modules",
     "bundles"

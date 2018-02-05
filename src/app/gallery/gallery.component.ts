@@ -1,22 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { LightboxService } from "../../../lib/src/service/lightbox.service";
-import { Image } from "../../../lib/src/model/image.model";
+import { LightboxService } from '../../../lib/src/service/lightbox.service';
+import { Image } from '../../../lib/src/model/image.model';
 
 @Component({
   selector: 'app-gallery',
-  templateUrl: './gallery.component.html',
+  templateUrl: './gallery.component.html'
 })
 export class GalleryComponent implements OnInit {
-
   galleryKey: string;
 
-  constructor(private ls: LightboxService) {
-
-  }
+  constructor(private ls: LightboxService) {}
 
   ngOnInit() {
     this.ls.createGallery('galleryKey');
-    let img = new Image();
+    const img = new Image();
     img.largeUrl = '/assets/one.jpg';
     img.height = 3296;
     img.width = 4934;
@@ -25,7 +22,7 @@ export class GalleryComponent implements OnInit {
     img.thumbUrl = '/assets/one.jpg';
     this.ls.addImage('galleryKey', img);
 
-    let img2 = new Image();
+    const img2 = new Image();
     img2.largeUrl = '/assets/two.jpg';
     img2.height = 3296;
     img2.width = 4934;
