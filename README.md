@@ -54,7 +54,10 @@ this.ls.addImage('galleryKey', img);
 
 ### Demo
 
-For a complete integration example have a look in the demo folder.
+For a demo just run:
+```
+npm run start
+```
 
 
 ### Origin repo:
