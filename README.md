@@ -7,7 +7,7 @@ The official PhotoSwipe JS file is still needed.
 
 ```
 npm install --save photoswipe
-npm install --save angular2_photoswipe
+npm install --save ngx-photoswipe
 ```
 Add to index.html
 ```
@@ -18,7 +18,7 @@ Add to index.html
 ```
 Include the NgxPhotoswipeModule.
 ```js
-import {NgxPhotoswipeModule} from 'angular2_photoswipe';
+import {NgxPhotoswipeModule} from 'ngx-photoswipe';
 
 @NgModule({
   ...

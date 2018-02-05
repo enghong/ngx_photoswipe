@@ -18,6 +18,9 @@
     "PhotoSwipe",
     "Lightbox"
   ],
+  "main": "bundles/ngx-photoswipe.umd.min.js",
+  "module": "src/index.ts",
+  "typings": "index.d.ts",
   "private": false,
   "peerDependencies": {
     "@angular/common": ">=5.0.0"
