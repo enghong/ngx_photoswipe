@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { LightboxService } from "@ngx-photoswipe";
-// import { LightboxService } from './../../../lib/src/service/lightbox.service';
-import { Image } from "@ngx-photoswipe";
-// import { Image } from './../../../lib/src/model/image.model';
+
+import { LightboxService } from "ngx-photoswipe";
+import { Image } from "ngx-photoswipe";
+
+// import { LightboxService } from "@ngx-photoswipe";
+// import { Image } from "@ngx-photoswipe";
 
 @Component({
   selector: 'app-root',

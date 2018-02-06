@@ -15,7 +15,6 @@
     "paths": {
       "@ngx-photoswipe": [
         "../lib/src/public_api.ts"
-
       ]
     }
   },
