@@ -8,7 +8,25 @@ The official PhotoSwipe JS file is still needed.
 ```
 npm install --save ngx-photoswipe
 ```
-Add to index.html
+
+Add to angular cli:
+```
+{
+  "apps": [{
+      "styles": [
+        "../node_modules/photoswipe/dist/photoswipe.css",
+        "../node_modules/photoswipe/dist/default-skin/default-skin.css"
+      ],
+      "scripts": [
+        "../node_modules/photoswipe/dist/photoswipe.js",
+        "../node_modules/photoswipe/dist/photoswipe-ui-default.js"
+      ],
+    }
+  ]
+}
+```
+
+Alternatively add to index.html
 ```
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.css" />
