@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/spec",
     "module": "commonjs",
@@ -10,7 +10,7 @@
       "node"
     ],
     "paths": {
-      "@my/lib": [ "../dist/my-lib" ]
+      "@my/lib": ["../../dist/my-lib"]
     }
   },
   "files": [

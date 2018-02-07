@@ -1,21 +1,17 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../../tsconfig.json",
   "angularCompilerOptions": {
     "paths": {
-      "@ngx-photoswipe": ["../lib/src/public_api.ts"]
+      "@ngx-photoswipe": ["../../dist/lib"]
     }
   },
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "module": "es2015",
     "baseUrl": "",
-    "types": [
-      "node"
-    ],
+    "types": [],
     "paths": {
-      "@ngx-photoswipe": [
-        "../lib/src/public_api.ts"
-      ]
+      "@ngx-photoswipe": ["../../dist/lib"]
     }
   },
   "exclude": [

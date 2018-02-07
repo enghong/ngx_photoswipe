@@ -20,6 +20,6 @@
     "lib": {
       "entryFile": "src/public_api.ts"
     },
-    "dest": "../dist/ngx-photoswipe"
+    "dest": "../../dist/ngx-photoswipe"
   }
 }
