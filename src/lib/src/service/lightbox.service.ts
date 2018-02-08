@@ -5,22 +5,26 @@ import { Image } from "../model/image.model";
 export class LightboxService {
   gallery: { [key: string]: Array<Image> } = {};
 
-  constructor() {}
-
-  createGallery(key: string) {
+  createGallery(key: string): void {
     this.gallery[key] = [];
+
+    return;
   }
 
-  setImages(key: string, images: Array<Image>) {
+  setImages(key: string, images: Array<Image>): void {
     this.gallery[key] = images;
+
+    return;
   }
 
-  addImage(key: string, image: Image) {
+  addImage(key: string, image: Image): void {
     if (key in this.gallery) {
       this.gallery[key].push(image);
     } else {
       throw new Error(`gallery '${key}' does not exist`);
     }
+
+    return;
   }
 
   getImages(key: string): Array<Image> {

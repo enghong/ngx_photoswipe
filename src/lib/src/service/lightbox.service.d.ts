@@ -1,4 +1,4 @@
-import { Image } from '../model/image.model';
+import { Image } from "../model/image.model";
 export declare class LightboxService {
   gallery: {
     [key: string]: Image[];

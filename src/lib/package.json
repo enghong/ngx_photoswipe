@@ -9,10 +9,12 @@
   "author": "Arkadiusz Hnat",
   "license": "MIT",
   "private": false,
-  "dependencies": {
+  "peerDependencies": {
     "imagesloaded": "^4.1.3",
     "@types/photoswipe": "^4.0.28",
-    "photoswipe": "^4.1.2"
+    "photoswipe": "^4.1.2",
+    "@angular/core": "^5.2.4",
+    "@angular/common": "^5.2.4"
   },
   "ngPackage": {
     "$schema": "./node_modules/ng-packagr/ng-package.schema.json",

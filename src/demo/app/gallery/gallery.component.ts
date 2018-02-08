@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 
-import { Image, LightboxService } from "ngx-photoswipe";
+// import { Image, LightboxService } from "ngx-photoswipe";
 
-// import { LightboxService } from "@ngx-photoswipe";
-// import { Image } from "@ngx-photoswipe";
+// tslint:disable-next-line:no-implicit-dependencies
+import { Image, LightboxService } from "@ngx-photoswipe";
 
 @Component({
-  selector: "app-root",
+  selector: "ngx-root",
   templateUrl: "./gallery.component.html"
 })
 export class GalleryComponent implements OnInit {
