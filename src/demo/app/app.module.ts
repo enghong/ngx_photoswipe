@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
 // import { NgxPhotoswipeModule } from '@ngx-photoswipe';
 import { NgxPhotoswipeModule } from "ngx-photoswipe";
 
-import { GalleryComponent } from './gallery/gallery.component';
+import { GalleryComponent } from "./gallery/gallery.component";
 
 @NgModule({
   declarations: [GalleryComponent],
@@ -13,5 +13,5 @@ import { GalleryComponent } from './gallery/gallery.component';
   bootstrap: [GalleryComponent]
 })
 export class AppModule {
-  constructor() { }
+  constructor() {}
 }

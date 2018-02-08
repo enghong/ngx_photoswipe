@@ -1,9 +1,9 @@
 <div class="ngx_photoswipe" [id]="key" itemscope itemtype="http://schema.org/ImageGallery">
-  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" *ngFor="let image of getImages()">
+  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" *ngFor="let image of getImages(); trackBy: image">
     <a href="{{image.largeUrl}}" itemprop="contentUrl" [attr.data-size]="image.width + 'x' + image.height" (click)="openImage(image)">
       <img src="{{image.thumbUrl}}" itemprop="thumbnail" alt="{{image.description}}" />
     </a>
-    <figcaption itemprop="caption description">{{image.description}}</figcaption>
+    <figcaption itemprop="caption description">{{ image.description }}</figcaption>
   </figure>
 </div>
 

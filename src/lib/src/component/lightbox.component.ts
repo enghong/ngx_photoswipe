@@ -5,7 +5,7 @@ import {
   Input,
   OnChanges,
   Output,
-  ViewEncapsulation,
+  ViewEncapsulation
 } from "@angular/core";
 import { Inject, PLATFORM_ID } from "@angular/core";
 import { Image } from "../model/image.model";
@@ -14,51 +14,53 @@ import { LightboxService } from "../service/lightbox.service";
 
 import * as PhotoSwipe from "photoswipe";
 import * as PhotoSwipeUI_Default from "photoswipe/dist/photoswipe-ui-default";
-const imagesLoaded = require("imagesloaded");
+
+import * as imagesLoaded from "imagesloaded";
+
 import { isPlatformBrowser } from "@angular/common";
 
 @Component({
   selector: "lightbox",
-  templateUrl: 'lightbox.component.html',
-  encapsulation: ViewEncapsulation.None,
+  templateUrl: "lightbox.component.html",
+  encapsulation: ViewEncapsulation.None
 })
 export class Lightbox implements OnChanges {
-  @Input("galleryKey") public key: string;
+  @Input("galleryKey") galleryKey: string;
   @Output("imagesLoaded")
-  public loadedEmitter: EventEmitter<number> = new EventEmitter();
-  public isBrowser: boolean;
+  loadedEmitter: EventEmitter<number> = new EventEmitter();
+  isBrowser: boolean;
   constructor(
     private lbService: LightboxService,
     private ref: ChangeDetectorRef,
-    @Inject(PLATFORM_ID) platformId: string,
+    @Inject(PLATFORM_ID) platformId: string
   ) {
     ref.detach();
     this.isBrowser = this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  public ngOnChanges() {
+  ngOnChanges(): void {
     this.ref.detectChanges();
     if (this.isBrowser) {
       this.checkImageLoad();
     }
   }
 
-  private checkImageLoad() {
-    imagesLoaded(`#${this.key}`, (check: any) => {
+  private checkImageLoad(): void {
+    imagesLoaded(`#${this.galleryKey}`, (check: any) => {
       this.loadedEmitter.emit(check.images.length);
     });
   }
 
-  public openImage(img: Image) {
+  openImage(img: Image): boolean {
     this.openPhotoSwipe(
       img,
-      document.getElementsByClassName("ngx_photoswipe")[0],
+      document.getElementsByClassName("ngx_photoswipe")[0]
     );
     return false;
   }
 
-  public getImages(): Image[] {
-    return this.lbService.getImages(this.key);
+  getImages(): Array<Image> {
+    return this.lbService.getImages(this.galleryKey);
   }
 
   private openPhotoSwipe(img: Image, galleryDOM: any): boolean {
@@ -66,24 +68,26 @@ export class Lightbox implements OnChanges {
     options.galleryUID = galleryDOM.getAttribute("data-pswp-uid");
     options.index = img.id;
     const PSWP: HTMLElement = document.querySelectorAll(
-      ".pswp",
+      ".pswp"
     )[0] as HTMLElement;
     new PhotoSwipe(
       PSWP,
       PhotoSwipeUI_Default,
       this.getImagesAsPhotoswipe(),
-      options,
+      options
     ).init();
+
     return false;
   }
 
-  private getImagesAsPhotoswipe(): PhotoswipeImage[] {
-    const items: PhotoswipeImage[] = [];
+  private getImagesAsPhotoswipe(): Array<PhotoswipeImage> {
+    const items: Array<PhotoswipeImage> = [];
     items.length = 0;
 
-    this.lbService.getImages(this.key).forEach(function (img) {
+    this.lbService.getImages(this.galleryKey).forEach(function f(img): void {
       items.push(new PhotoswipeImage(img.largeUrl, img.width, img.height));
     });
+
     return items;
   }
 }

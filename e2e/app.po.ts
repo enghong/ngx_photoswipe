@@ -1,11 +1,11 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element } from "protractor";
 
 export class NgPackagedPage {
-  navigateTo() {
-    return browser.get('/');
+  navigateTo(): any {
+    return browser.get("/");
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getParagraphText(): any {
+    return element(by.css("app-root h1")).getText();
   }
 }

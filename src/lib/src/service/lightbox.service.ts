@@ -3,19 +3,19 @@ import { Image } from "../model/image.model";
 
 @Injectable()
 export class LightboxService {
-  public gallery: { [key: string]: Image[] } = {};
+  gallery: { [key: string]: Array<Image> } = {};
 
   constructor() {}
 
-  public createGallery(key: string) {
+  createGallery(key: string) {
     this.gallery[key] = [];
   }
 
-  public setImages(key: string, images: Image[]) {
+  setImages(key: string, images: Array<Image>) {
     this.gallery[key] = images;
   }
 
-  public addImage(key: string, image: Image) {
+  addImage(key: string, image: Image) {
     if (key in this.gallery) {
       this.gallery[key].push(image);
     } else {
@@ -23,11 +23,11 @@ export class LightboxService {
     }
   }
 
-  public getImages(key: string): Image[] {
+  getImages(key: string): Array<Image> {
     return this.gallery[key];
   }
 
-  public removeImage(key: string, id: number) {
+  removeImage(key: string, id: number): void {
     this.gallery[key].forEach((img, index) => {
       if (img.id === id) {
         this.gallery[key].splice(index, 1);

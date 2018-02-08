@@ -17,13 +17,13 @@ export let providers = [LightboxService];
   imports: [CommonModule],
   declarations: [Lightbox],
   providers: [LightboxService],
-  exports: [Lightbox],
+  exports: [Lightbox]
 })
 export class NgxPhotoswipeModule {
-  public static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders {
     return {
       ngModule: NgxPhotoswipeModule,
-      providers,
+      providers
     };
   }
 }
