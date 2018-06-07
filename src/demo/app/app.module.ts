@@ -1,8 +1,10 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-// import { NgxPhotoswipeModule } from '@ngx-photoswipe';
+// import { NgxPhotoswipeModule } from "../../lib/src/ngxPhotoswipeModule"
 // tslint:disable-next-line:no-implicit-dependencies
-import { NgxPhotoswipeModule } from "@ngx-photoswipe";
+// import { NgxPhotoswipeModule } from "@ngx-photoswipe";
+
+import { NgxPhotoswipeModule } from 'ngx-photoswipe';
 
 import { GalleryComponent } from "./gallery/gallery.component";
 

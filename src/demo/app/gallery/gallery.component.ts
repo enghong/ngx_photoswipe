@@ -1,9 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-
-// import { Image, LightboxService } from "ngx-photoswipe";
-
 // tslint:disable-next-line:no-implicit-dependencies
-import { Image, LightboxService } from "@ngx-photoswipe";
+// import { Image, LightboxService } from "@ngx-photoswipe";
+import { Image, LightboxService } from "ngx-photoswipe";
+
+// import { Image } from "../../../lib/src/model/image.model";
+// import { LightboxService } from "../../../lib/src/service/lightbox.service";
 
 @Component({
   selector: "ngx-root",
