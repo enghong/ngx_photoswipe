@@ -3,13 +3,10 @@ import { Image } from "../model/image.model";
 import { PhotoswipeImage } from "../model/photoswipe-image.model";
 import { LightboxService } from "../service/lightbox.service";
 
-import * as PhotoSwipe from "photoswipe";
-import * as PhotoSwipeUI_Default from "photoswipe/dist/photoswipe-ui-default";
+import PhotoSwipe from "photoswipe";
+import PhotoSwipeUI_Default from "photoswipe/dist/photoswipe-ui-default";
 
-import * as imagesloaded_ from "imagesloaded";
-//hack to fix error:
-//Cannot call a namespace ('imagesloaded_')
-const IL = imagesloaded_;
+import imagesloaded from "imagesloaded";
 import { isPlatformBrowser } from "@angular/common";
 
 @Component({
@@ -46,7 +43,7 @@ export class LightboxComponent implements OnChanges {
   }
 
   private checkImageLoad(): void {
-    IL(`#${this.galleryKey}`, (check: any) => {
+    imagesloaded(`#${this.galleryKey}`, (check: any) => {
       this.imagesLoaded.emit(check.images.length);
     });
   }
